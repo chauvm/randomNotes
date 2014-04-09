@@ -56,7 +56,7 @@ public class MainActivity extends ActionBarActivity {
       
         
         // post content
-        EditText edit = (EditText) findViewById(R.id.editTxt);  
+//        EditText edit = (EditText) findViewById(R.id.editTxt);  
        // Welcome Message
         TextView textview = (TextView)findViewById(R.id.text);
         textview.setText("Welcome to SocialAuth Demo. We are sharing text SocialAuth Android by share button.");
@@ -173,12 +173,19 @@ public class MainActivity extends ActionBarActivity {
 	}
 	
 	public void postGenerator(View view) {
-//		String url = "http://en.wikipedia.org/wiki/Timeline_of_modern_history";
-//		Random rndgen = new Random();
-//		int year = rndgen.nextInt(99) + 1900;
-//		RandomNotesParser parser = new RandomNotesParser(url, year);
-//		String post = parser.generatePost();
-//		edit.setText(post);
+        EditText edit = (EditText) findViewById(R.id.editTxt);  
+		String url = "http://en.wikipedia.org/wiki/Timeline_of_modern_history";
+		Random rndgen = new Random();
+		int year = rndgen.nextInt(99) + 1900;
+		RandomNotesParser parser = new RandomNotesParser(url, year);
+		String post = "";
+		try {
+			post = parser.generatePost();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		edit.setText(post);
 //		edit.setText("test button");
 	}
 }
