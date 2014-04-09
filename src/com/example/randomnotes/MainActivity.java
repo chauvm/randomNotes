@@ -179,6 +179,6 @@ public class MainActivity extends ActionBarActivity {
 //		RandomNotesParser parser = new RandomNotesParser(url, year);
 //		String post = parser.generatePost();
 //		edit.setText(post);
-		edit.setText("test button");
+//		edit.setText("test button");
 	}
 }
