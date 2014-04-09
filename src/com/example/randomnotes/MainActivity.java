@@ -1,10 +1,8 @@
 package com.example.randomnotes;
 
-import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
-import java.util.Random;
 
 import org.brickred.socialauth.Photo;
 import org.brickred.socialauth.Profile;
@@ -49,7 +47,8 @@ public class MainActivity extends ActionBarActivity {
 
 	// Android Components
 	Button update;
-	EditText edit;    @Override
+	EditText edit;    
+	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -175,16 +174,13 @@ public class MainActivity extends ActionBarActivity {
 	public void postGenerator(View view) {
         EditText edit = (EditText) findViewById(R.id.editTxt);  
 		String url = "http://en.wikipedia.org/wiki/Timeline_of_modern_history";
-		Random rndgen = new Random();
-		int year = rndgen.nextInt(99) + 1900;
-		RandomNotesParser parser = new RandomNotesParser(url, year);
 		String post = "";
+		RandomNotesParser parser = new RandomNotesParser(this, this, edit);
 		try {
-			post = parser.generatePost();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			parser.execute(new URL(url));
+		} catch (MalformedURLException e) {
 			e.printStackTrace();
-		}
+		}		
 		edit.setText(post);
 //		edit.setText("test button");
 	}
