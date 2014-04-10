@@ -126,6 +126,7 @@ public class MainActivity extends ActionBarActivity {
 
 	private final class ResponseListener implements DialogListener {
 	   public void onComplete(Bundle values) {
+		   edit = (EditText) findViewById(R.id.editTxt);
 		   adapter.updateStatus(edit.getText().toString(), new MessageListener(),false);
 	   }
 
