@@ -30,16 +30,6 @@ import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity {
 
-//	@Override
-//	protected void onCreate(Bundle savedInstanceState) {
-//		super.onCreate(savedInstanceState);
-//		setContentView(R.layout.activity_main);
-//
-//		if (savedInstanceState == null) {
-//			getSupportFragmentManager().beginTransaction()
-//					.add(R.id.container, new PlaceholderFragment()).commit();
-//		}
-//	}
 	// SocialAuth Component
 	SocialAuthAdapter adapter;
 	Profile profileMap;
@@ -53,14 +43,11 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
       
-        
-        // post content
-//        EditText edit = (EditText) findViewById(R.id.editTxt);  
-       // Welcome Message
+        // Welcome Message
         TextView textview = (TextView)findViewById(R.id.text);
-        textview.setText("Welcome to SocialAuth Demo. We are sharing text SocialAuth Android by share button.");
+        textview.setText("Use SocialAuth to post on social networks.");
         
-        //Create Your Own Share Button
+        // Share Button
         Button share = (Button)findViewById(R.id.sharebutton);
         share.setText("Share");
         share.setTextColor(Color.WHITE);
@@ -183,6 +170,5 @@ public class MainActivity extends ActionBarActivity {
 			e.printStackTrace();
 		}		
 		edit.setText(post);
-//		edit.setText("test button");
 	}
 }
