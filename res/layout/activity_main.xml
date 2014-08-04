@@ -20,114 +20,82 @@
  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  THE SOFTWARE.
- ===========================================================================
+
 -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#000000"
-    >
-    <LinearLayout 
-    android:orientation="horizontal"
-    android:id="@+id/topbar"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:padding="7dp"
-    android:background="@drawable/blue_gradient"
-    >   
-	    <TextView 
-			android:id="@+id/textview"
-			android:layout_height="wrap_content"
-			android:layout_width="wrap_content"
-			android:layout_gravity="center_vertical"
-			android:textColor="#ffffff"
-			android:textSize="14sp"
-			android:text="Share Button"
-			android:textStyle="bold"
-		/>
-	</LinearLayout>
-	<View
-        android:id="@+id/view01"
+    android:background="#000000" >
+
+
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:textColor="#ffffff"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/dialogTitle"
         android:layout_width="fill_parent"
-        android:layout_height="1dp"
-        android:layout_below="@+id/topbar"
-        android:background="#313437" />      
-     <TextView 
-		android:id="@+id/text"
-		android:layout_height="wrap_content"
-		android:layout_width="wrap_content"
-		android:textSize="14sp"
-		android:textStyle="bold"
-		android:layout_marginLeft="10dp"
-		android:layout_marginRight="10dp"
-		android:layout_marginTop="20dp"
-		android:textColor="#ffffff"
-		android:layout_below="@+id/view01"
-	/>
-    <TextView 
-		android:id="@+id/dialogTitle"
-		android:layout_height="wrap_content"
-		android:layout_width="fill_parent"
-		android:textColor="#ffffff"
-		android:textSize="14sp"
-		android:text="Share Update"
-		android:layout_marginTop="30dp"
-		android:layout_marginLeft="10dp"
-		android:layout_marginRight="10dp"
-		android:textStyle="bold"
-		android:layout_below="@+id/text"	
-	/>  
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="30dp"
+        android:text="Content pulled from Wikipedia"
+        android:textColor="#ffffff"
+        android:textSize="14sp"
+        android:textStyle="bold" />
 
-	<EditText
-	    android:id="@+id/editTxt"
-	    android:layout_width="fill_parent"
-	    android:layout_height="wrap_content"
-	    android:layout_below="@+id/dialogTitle"
-	    android:layout_margin="5dp"
-	    android:layout_marginLeft="10dp"
-	    android:layout_marginRight="10dp"
-	    android:hint="Enter Message"
-	    android:textColor="#ffffff"
-	    android:textSize="12sp" />
-    
-	<RelativeLayout 
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/layout_gradient"
-    android:layout_alignParentBottom="true"
-    >    
-    <Button 
-		android:id="@+id/sharebutton"
-		android:layout_height="wrap_content"
-		android:layout_width="wrap_content"
-		android:layout_centerInParent="true"
-		android:layout_margin="20dp"
-	/>     
-</RelativeLayout>
+    <EditText
+        android:id="@+id/editTxt"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dialogTitle"
+        android:layout_margin="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:hint="Enter Message"
+        android:textColor="#ffffff"
+        android:textSize="12sp" />
 
-	<Button
-	    android:id="@+id/button1"
-	    android:onClick="postGenerator"
-	    
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:layout_alignLeft="@+id/dialogTitle"
-	    android:layout_centerVertical="true"
-	    android:text="@string/btn_generate_post" />
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/layout_gradient" >
 
-	<Button
-	    android:id="@+id/update"
-	    android:onClick="postGenerator"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:layout_alignBaseline="@+id/button1"
-	    android:layout_alignBottom="@+id/button1"
-	    android:layout_alignRight="@+id/dialogTitle"
-	    android:layout_marginRight="13dp"
-	    android:background="#147af8"
-	    android:padding="5dp"
-	    android:text="Update"
-	    android:textColor="#ffffff"
-	    android:textSize="12sp" />
+        <Button
+            android:id="@+id/sharebutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="20dp"
+            android:layout_marginRight="53dp" />
+
+        <Button
+            android:id="@+id/update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/sharebutton"
+            android:layout_alignBottom="@+id/sharebutton"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="34dp"
+            android:background="#147af8"
+            android:onClick="postGenerator"
+            android:padding="5dp"
+            android:text="Update"
+            android:textColor="#ffffff"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
 
 </RelativeLayout>
